@@ -10,4 +10,19 @@ int CalcFinishArray(string [] array){
     }
     return count;
 }
- 
+
+string [] CreatArr(int count){
+    string [] array = new string [count];
+    return array;
+}
+
+string [] GetArray(string [] array, string [] arr){
+    for (int i = 0; i < arr.Length; i++)
+    {
+        for (int j = 0; i < array.Length; j++)
+        {
+            if(array[j].Length <= 3) arr[i] = array[j];
+        }
+    }
+    return arr;
+}
