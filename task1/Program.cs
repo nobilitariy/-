@@ -17,12 +17,34 @@ string [] CreatArr(int count){
 }
 
 string [] GetArray(string [] array, string [] arr){
-    for (int i = 0; i < arr.Length; i++)
-    {
-        for (int j = 0; i < array.Length; j++)
-        {
-            if(array[j].Length <= 3) arr[i] = array[j];
+    int pos = 0;
+    for (int i = 0; i < arr.Length; i++){
+        if(arr[i].Length <= 3){
+            array[pos] = arr[i];
+            pos++;
         }
-    }
-    return arr;
+    } 
+    return array;
 }
+
+void PrintArr(string [] array, string [] arr){
+    if(arr.Length == 0) Console.Write($"{string.Join(", ", array)} => []");
+    else Console.Write($"{string.Join(", ", array)} => {string.Join(", ", arr)} ");
+    
+}
+
+int size1 = CalcFinishArray(arr1);
+int size2 = CalcFinishArray(arr2);
+int size3 = CalcFinishArray(arr3);
+string [] array1 = CreatArr(size1);
+string [] array2 = CreatArr(size2);
+string [] array3 = CreatArr(size3);
+string [] finish1 = GetArray(array1, arr1);
+string [] finish2 = GetArray(array2, arr2);
+string [] finish3 = GetArray(array3, arr3);
+PrintArr(arr1, finish1);
+Console.WriteLine();
+PrintArr(arr2, finish2);
+Console.WriteLine();
+PrintArr(arr3, finish3);
+Console.WriteLine();
